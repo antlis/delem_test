@@ -1,5 +1,5 @@
 // @import "mixins";
-// @import "typography";
+@import 'helpers';
 
 @import "bower_components/bootstrap/scss/functions";
 @import "bower_components/bootstrap/scss/variables";
@@ -13,8 +13,8 @@
 @import "bower_components/bootstrap/scss/grid";
 // @import "bower_components/bootstrap/scss/tables";
 // @import "bower_components/bootstrap/scss/forms";
-@import "bower_components/bootstrap/scss/buttons";
-@import "bower_components/bootstrap/scss/transitions";
+// @import "bower_components/bootstrap/scss/buttons";
+// @import "bower_components/bootstrap/scss/transitions";
 // @import "bower_components/bootstrap/scss/dropdown";
 // @import "bower_components/bootstrap/scss/button-group";
 // @import "bower_components/bootstrap/scss/input-group";
@@ -31,8 +31,10 @@
 @import "bower_components/bootstrap/scss/media";
 // @import "bower_components/bootstrap/scss/list-group";
 // @import "bower_components/bootstrap/scss/close";
-@import "bower_components/bootstrap/scss/modal";
+// @import "bower_components/bootstrap/scss/modal";
 // @import "bower_components/bootstrap/scss/tooltip";
 // @import "bower_components/bootstrap/scss/popover";
 // @import "bower_components/bootstrap/scss/carousel";
-@import "bower_components/bootstrap/scss/utilities";
+// @import "bower_components/bootstrap/scss/utilities";
+
+@import 'typography';

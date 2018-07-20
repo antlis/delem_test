@@ -1,8 +1,85 @@
 // bower:scss
 // endbower
-@import 'typography';
-// @import 'imports';
+@import 'imports';
 
-.container {
-    max-width: 1170px;
+body {
+    @extend %muli-light;
+    font-size: 16px;
+}
+
+.main-header {
+    background: url(/images/hero_bg.jpg) no-repeat;
+    background-size: cover;
+}
+
+.main-header__headline {
+    padding-top: 65px;
+    @extend .container;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+}
+
+.nav__item {
+    margin-left: 25px;
+}
+
+.nav__item a {
+    color: $white;
+    padding: 0 5px 5px;
+    border-bottom: 1px solid yellow;
+    text-decoration: none;
+    @extend %capitalize;
+    @extend %muli-semi-bold;
+    font-size: 14px;
+}
+
+.logo {
+    text-transform: uppercase;
+    @extend %muli-black;
+    font-size: 20px;
+}
+
+.logo_bright {
+    color: $white;
+}
+
+.main-header__hero {
+    @extend .container;
+}
+
+.hero {
+    color: $white;
+}
+
+.hero__caption {
+    @extend %trirong-light;
+}
+
+.hero__sub-caption {
+    @extend %muli-extra-light;
+}
+
+.main-content__about {
+    @extend .container-fluid;
+}
+
+.main-content__our-clients {
+    @extend .container;
+}
+
+.main-content__feedback {
+    @extend .container;
+}
+
+.main-footer__copy {
+    display: block;
+    @extend %text-center;
+    padding: 25px 0;
+    border-top: 1px solid #41426d;
+    background: #2b2d5c;
 }

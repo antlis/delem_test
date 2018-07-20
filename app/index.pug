@@ -1,6 +1,44 @@
 extends layouts/default
 
 block content
+    header.main-header
+        .main-header__headline
+            .main-header__logo
+                .logo.logo_bright= meta.siteNameLogo
+            .main-header__nav
+                nav.nav
+                    ul.nav__list
+                        each val, index in nav.links
+                            if index == 0
+                                li.nav__item.nav__item-active
+                                    a(href='#0')= val
+                            else
+                                li.nav__item
+                                    a(href='#0')= val
+                            
+        .main-header__hero
+            .hero
+                .hero__caption
+                    h1= hero.caption
+                .hero__sub-caption
+                    h2= hero.subCaption
+            
     main.main-content
-        header.main-content__header
-        footer.main-content__footer
+        section.main-content__about
+            .about
+                h3= about.caption
+                p= about.description
+        section.main-content__our-clients
+            .our-clients
+                h3= clients.caption
+        section.main-content__feedback
+            .feedback
+                h3= feedback.caption
+                form.feedback__form
+                    input(name='feedback-name', placeholder=feedback.placeholderName, type='text')
+                    input(name='feedback-email', placeholder=feedback.placeholderEmail, type='text')
+                    textarea(name='feedback-message', placeholder=feedback.placeholderMessage)
+                    button(type='submit')= feedback.button
+                    
+    footer.main-footer
+        small.main-footer__copy= footer.copy

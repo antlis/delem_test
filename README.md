@@ -1,5 +1,3 @@
 # Digital element test
 
-npm i
-bower install
-gulp serve
+npm i & bower install & gulp serve

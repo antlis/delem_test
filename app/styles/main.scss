@@ -638,3 +638,36 @@ body {
         padding-bottom: 50px;
     }
 }
+
+@media screen and (max-width: #{map-get($grid-breakpoints, lg)}) {
+    .our-clients__item {
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 1650px) {
+    .about__about-thumb {
+        left: -270px;
+    }
+    .portfolio__intro {
+        padding-top: 170px;
+        padding-bottom: 170px;
+    }
+}
+
+@media screen and (max-width: 1450px) {
+   .about__about-thumb {
+        left: -200px;
+    }
+    .portfolio__intro {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .about__about-thumb {
+        max-width: 100%;
+        left: 0;
+    }
+}

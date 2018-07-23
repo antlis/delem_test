@@ -108,7 +108,7 @@ block content
             a.pre-footer__scroll-to-top(href='#home')
                 span.oi.oi-chevron-top(aria-hidden='true')
             .row
-                .col-md-3
+                .col-lg-3
                     +logo
                     h5.pre-footer__caption.pre-footer__caption_inner= preFooter.contactCaption
                     .contact
@@ -118,14 +118,14 @@ block content
                             a.contact__email(href='mailto:' + contact.email)=contact.email
                     h5.pre-footer__caption.pre-footer__caption_inner.pre-footer__caption_follow= preFooter.followMeCaption
                     .ya-share-footer
-                .col-md-4
+                .col-lg-4
                     h5.pre-footer__caption= preFooter.latestBlogPostsCaption
                     .blog-posts-preview
                         +blogPostsPreview
-                .col-md-2
+                .col-lg-2
                     h5.pre-footer__caption= preFooter.quickLinkCaption
                     +navList('footer')
-                .col-md-3
+                .col-lg-3
                     .instagram-feed
                         h5.pre-footer__caption= preFooter.instagramUpdateCaption
                         .row

@@ -1,0 +1,96 @@
+mixin readMore(url, style)
+    if style=='simple'
+        a.read-more.read-more_simple(href=url) read more...
+    if style=='fancy'
+        a.read-more.read-more_fancy(href=url) read more
+
+mixin logo
+    .logo.logo_bright
+        img.logo__image(src='/images/logo.png', alt=meta.siteName)
+        span= meta.siteNameLogo
+
+mixin navList(placement)
+    if placement == 'header'
+        ul.nav__list
+            each val, index in nav.links
+                if index == 0
+                    li.nav__item.nav__item-active
+                        a(href='#' + val)= val
+                else
+                    li.nav__item
+                        a(href='#' + val)= val
+    if placement == 'footer'
+        ul.nav__list.nav__list_vertical
+            each val, index in nav.links
+                if index == 0
+                    li.nav__item.nav__item-active
+                        a(href='#' + val)= val
+                else
+                    li.nav__item
+                        a(href='#' + val)= val
+            
+mixin clientsImages
+    .row
+        each image in clients.images
+            .col-md-2.our-clients__item
+                img(src=image[1], alt=image[0])
+                
+mixin service
+    .row.service__items
+        each offer, index in service.offers
+            if index == 0
+                .col-sm-4
+                    h5.service__offer-title= offer.title
+                    a(href='#0')
+                        img(src=offer.image alt=offer.title)
+            if index == 1
+                .col-sm-4.content-center
+                    div
+                        h5.service__offer-title= offer.title
+                        a(href='#0')
+                            img(src=offer.image alt=offer.title)
+            if index == 2
+                .col-sm-4.content-right
+                    div
+                        h5.service__offer-title= offer.title
+                        a(href='#0')
+                            img(src=offer.image alt=offer.title)
+
+mixin blogPostsPreview
+    each post, index in blog.postsPreview
+        .row.blog-post-preview__entry
+            .col-3
+                .blog-post-preview__image
+                    img.img-fluid(src=post.image, alt=post.content)
+            .col-9
+                .blog-post-preview__content
+                    p= post.content
+                    footer.blog-post-preview__info= post.category + ' - ' + post.date
+
+mixin blogPosts
+    .row.blog__posts
+        each post, index in blog.posts
+            if(index == 1)
+                .col-md-4.order-sm-1.order-1(class="order-md-" + index)
+                    .blog__entry
+                        h3.blog__title= blog.caption
+                        .blog__post-middle
+                            p.blog__intro= blog.intro
+                            .blog__post-preview
+                                img.img-fluid(src=post.image, alt=post.title)
+                                .blog__content
+                                    h4.blog__post-title= post.title
+                                    div.blog__info= post.category + ' - ' + post.date
+                                    div.blog__text= post.content
+                                    div
+                                        a.read-more.read-more_fancy(href=post.fullLink) read more
+            else
+                .col-md-4.order-sm-12.order-12(class="order-md-" + index)
+                    .blog__entry
+                        img.img-fluid(src=post.image, alt=post.title)
+                        .blog__content
+                            h4.blog__post-title= post.title
+                            div.blog__info= post.category + ' - ' + post.date
+                            div.blog__text= post.content
+                            div
+                                a.read-more.read-more_fancy(href=post.fullLink) read more

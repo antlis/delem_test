@@ -1,5 +1,4 @@
 // @import "mixins";
-@import 'helpers';
 
 @import "bower_components/bootstrap/scss/functions";
 @import "bower_components/bootstrap/scss/variables";
@@ -36,5 +35,9 @@
 // @import "bower_components/bootstrap/scss/popover";
 // @import "bower_components/bootstrap/scss/carousel";
 // @import "bower_components/bootstrap/scss/utilities";
+@import "../open-iconic-master/font/css/open-iconic-bootstrap.scss";
+
 
 @import 'typography';
+@import 'colors';
+@import 'helpers';

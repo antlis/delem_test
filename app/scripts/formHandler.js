@@ -1,23 +1,38 @@
-class formHandler {
-  constructor(form) {
+module.exports = class FormHandler {
+  constructor(form, url) {
     this.form = form;
+    this.ajaxSubmit = this.constructor.ajaxSubmit;
   }
 
-  submit() {
+  static ajaxSubmit() {
+    $.ajax({
+        url: 'https://formspree.io/antlis@protonmail.com',
+        data: $(this).serialize(),
+        type: 'POST',
+        success: function(data) {
+            $('.modal').modal('show');
+            setTimeout(() => {
+              $('.modal').modal('hide');
+            }, 5000);
+        }
+    });
+  }
+  
+  initSubmitHandler() {
     this.form.on('submit', function(e) {
         e.preventDefault();
-        
+
         $.ajax({
             url: 'https://formspree.io/antlis@protonmail.com',
             data: $(this).serialize(),
             type: 'POST',
             success: function(data) {
-                console.log('mail sent');
+                $('.modal').modal('show');
+                setTimeout(() => {
+                  $('.modal').modal('hide');
+                }, 5000);
             }
-        })
-    })
+        });
+    });
   }
 }
-
-var form = new formHandler($('.feedback__ajax-submit'));
-console.log(form.submit());

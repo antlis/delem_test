@@ -10,6 +10,7 @@
     "babelify": "^8.0.0",
     "browser-sync": "^2.2.1",
     "browserify": "^16.2.2",
+    "browserify-shim": "^3.8.14",
     "del": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.1",
@@ -31,6 +32,7 @@
     "gulp-sourcemaps": "^2.2.0",
     "gulp-uglify": "^2.0.0",
     "gulp-useref": "^3.0.0",
+    "jquery": "^3.3.1",
     "main-bower-files": "^2.5.0",
     "run-sequence": "^1.2.2",
     "vinyl-buffer": "^1.0.1",
@@ -53,5 +55,8 @@
         "single"
       ]
     }
+  },
+  "dependencies": {
+    "hover.css": "^2.3.2"
   }
 }

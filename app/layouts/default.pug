@@ -4,11 +4,14 @@ include includes/mixins.pug
 doctype html
 html.no-js(lang='en')
   head
+    //- https://github.com/joshbuchea/HEAD
     meta(charset='utf-8')
     meta(name='description', content=meta.description)
-    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
     title= meta.siteName
     link(rel='apple-touch-icon', href='apple-touch-icon.png')
+    +social
+    //- base(href='http://digital-elem-xzarxzes.c9users.io:8080')
     // Place favicon.ico in the root directory
 
     // build:css styles/vendor.css
@@ -20,11 +23,12 @@ html.no-js(lang='en')
     link(rel='stylesheet', href='styles/main.css')
     // endbuild
 
+    //- https://modernizr.com/docs/
     // build:js scripts/vendor/modernizr.js
     script(src='/bower_components/modernizr/modernizr.js')
     // endbuild
   body
-    <!--[if lt IE 10]>
+    <!--[if lt IE 11]>
       p.browserupgrade
         | You are using an <strong>outdated</strong> browser.
         | Please <a href="http://browsehappy.com/">upgrade your browser</a>
@@ -32,22 +36,21 @@ html.no-js(lang='en')
     <![endif]-->
 
     block content
+    //- https://getbootstrap.com/docs/4.0/components/modal/
+    +modal
 
-    // Google Analytics: change UA-XXXXX-X to be your site's ID.
-    script.
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
+    +ga('UA-XXXXX-X')
+    +yaMetrica('49785661')
+    +jsonLD
 
     // build:js scripts/vendor.js
     // bower:js
-    script(src='/bower_components/jquery/dist/jquery.js')
+    //- script(src='/bower_components/jquery/dist/jquery.js')
     //- script(src='/bower_components/modernizr/modernizr.js')
     // endbower
     // endbuild
+    
+    //- https://tech.yandex.ru/share/doc/dg/api-docpage/
     script(src='https://yastatic.net/share2/share.js')
 
     // build:js scripts/plugins.js

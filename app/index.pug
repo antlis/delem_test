@@ -6,21 +6,25 @@ block content
             .main-header__logo
                 +logo
             .main-header__nav
-                nav.nav
-                    +navList('header')
+                nav.nav.navbar.navbar-expand-md
+                    button.nav__toggle.navbar-toggler(type='button', data-toggle="collapse", data-target="#collapsibleNavbar")
+                        span.oi.oi-collapse-down
+                    .collapse.navbar-collapse
+                        +navList('header')
                             
         .main-header__hero
             .hero
                 h1.hero__caption= hero.caption
                 h2.hero__sub-caption= hero.subCaption
-                a.button.button_yellow.button_regular.button_capitalized(href='#0')= hero.button
+                .hero__bottom
+                        a.button.button_yellow.button_regular.button_capitalized.hvr-forward(href='#0')= hero.button
                 
         .main-heder__bottomline
             .bottomline
                 .container
                     .row
                         .col-sm-4.offset-sm-4
-                            a.bottomline__scroll-to-about(href='#about')
+                            a.bottomline__scroll-to-about.hvr-wobble-vertical(href='#about')
                                 span.oi.oi-chevron-bottom(aria-hidden='true')
                         .col-sm-4.bottomline__social
                             .ya-share
@@ -30,15 +34,16 @@ block content
             .about#about
                 .container
                     .row
-                        .col-sm-4
-                            img.about__about-thumb(src='/images/about_thumbnail.jpg' alt='about myself')
-                        .col-sm-8
-                            h3.about__title= about.caption
-                            p.about__description= about.description
-                            aside.services
-                                h4.services__title= service.caption
-                                +service
-                                a.button.button_dark-blue.button_uppercase.button_semi-bold(href='#0')= service.button
+                        .col-md-4.about__about-thumb
+                            img.img-fluid.about__image(src= about.imageCDN alt='about myself')
+                        .col-md-8
+                            .about__textual-content
+                                h3.about__title= about.caption
+                                p.about__description= about.description
+                                aside.services
+                                    h4.services__title= service.caption
+                                    +service
+                                    a.button.button_dark-blue.button_uppercase.button_semi-bold.hvr-forward(href='https://www.flickr.com/')= service.button
         
         section.main-content__our-clients
             .container
@@ -48,14 +53,13 @@ block content
                     
         section.main-content__portfolio
             .container-fluid
-                .portfolio#portfolio
+                .portfolio.portfolio_cross-figure#portfolio
                     .row
-                        .col-md-4
-                            .portfolio__intro
+                        .col-md-4.portfolio__intro
                                 h3.portfolio__title= portfolio.caption
                                 p.portfolio__description= portfolio.description
                                 +readMore(portfolio.descriptionLink, 'simple')
-                        .col-md-8
+                        .col-md-8.portfolio__gallery
                             .row
                                 .col-sm-4.vertical-col
                                     a.portfolio__item(href='#0')
@@ -65,27 +69,35 @@ block content
                                         .portfolio__item-social
                                         img.img-fluid(src='/images/portfolio/portfolio_1.jpg', alt='portfolio 1')
                                 .col-sm-8
-                                    .horizontal-col
-                                        a.portfolio__item(href='#0')
-                                            .portfolio__item-social
-                                            img.img-fluid(src='/images/portfolio/portfolio_2.jpg', alt='portfolio 2')
-                                        .portfolio__item
-                                            .portfolio__item-social
-                                            img.img-fluid(src='/images/portfolio/portfolio_3.jpg', alt='portfolio 3')
-                                    .horizontal-col
-                                        a.portfolio__item(href='#0')
-                                            .portfolio__item-social
-                                            img.img-fluid(src='/images/portfolio/portfolio_4.jpg', alt='portfolio 4')
-                                        a.portfolio__item(href='#0')
-                                            .portfolio__item-social
-                                            img.img-fluid(src='/images/portfolio/portfolio_5.jpg', alt='portfolio 5')
-                                    .horizontal-col
-                                        a.portfolio__item(href='#0')
-                                            .portfolio__item-social
-                                            img.img-fluid(src='/images/portfolio/portfolio_6.jpg', alt='portfolio 6')
+                                    .row.horizontal-col
+                                        .col-sm-9
+                                            a.portfolio__item(href='#0')
+                                                .portfolio__item-social
+                                                img.img-fluid(src='/images/portfolio/portfolio_2.jpg', alt='portfolio 2')
+                                        .col-sm-3
+                                                .portfolio__item
+                                                    .portfolio__item-social
+                                                    img.img-fluid(src='/images/portfolio/portfolio_3.jpg', alt='portfolio 3')
+                                    .row.horizontal-col
+                                        .col-sm-6
+                                            a.portfolio__item(href='#0')
+                                                .portfolio__item-social
+                                                img.img-fluid(src='/images/portfolio/portfolio_4.jpg', alt='portfolio 4')
+                                        .col-sm-6.text-right
+                                            a.portfolio__item(href='#0')
+                                                .portfolio__item-social
+                                                img.img-fluid(src='/images/portfolio/portfolio_5.jpg', alt='portfolio 5')
+                                    .row.horizontal-col
+                                        .col-12
+                                            a.portfolio__item(href='#0')
+                                                .portfolio__item-social
+                                                img.img-fluid(src='/images/portfolio/portfolio_6.jpg', alt='portfolio 6')
+                            footer.row.portfolio__footer
+                                .col-12
+                                    a.button.button_transparent.button_uppercase.button__wider.hvr-wobble-horizontal(href='#')= portfolio.button
             
         section.main-content__blog
-            .blog#blog
+            .blog.blog_cross-figure#blog
                 .container-fluid
                     +blogPosts
         
@@ -95,18 +107,20 @@ block content
                     h3.feedback__title= feedback.caption
                     form.feedback-form(class='feedback__ajax-submit', method='POST', action='https://formspree.io/antlis@protonmail.com')
                         div.feedback-form__form-group
-                            input(name='feedback-name', placeholder=feedback.placeholderName, type='text', required)
+                            .feedback-form__required.feedback-form__field
+                                input(name='feedback-name', placeholder=feedback.placeholderName, type='text', required, minlength='3', maxlength="20")
                         div.feedback-form__form-group
-                            input(name='feedback-email', placeholder=feedback.placeholderEmail, type='text', required)
+                            .feedback-form__required.feedback-form__field
+                                input(name='feedback-email', placeholder=feedback.placeholderEmail, type='email', required)
                         div.feedback-form__form-group
                             textarea(name='feedback-message', placeholder=feedback.placeholderMessage)
                         div.feedback-form__form-group
-                            button.button.button_yellow.button_regular.button_uppercase(type='submit')= feedback.button
+                            button.button.button_yellow.button_regular.button_uppercase.hvr-bounce-in(type='submit')= feedback.button
                     
     aside.pre-footer
         .container
             a.pre-footer__scroll-to-top(href='#home')
-                span.oi.oi-chevron-top(aria-hidden='true')
+                span.pre-footer__scroll-to-top-icon.oi.oi-chevron-top(aria-hidden='true')
             .row
                 .col-lg-3
                     +logo
@@ -128,19 +142,26 @@ block content
                 .col-lg-3
                     .instagram-feed
                         h5.pre-footer__caption= preFooter.instagramUpdateCaption
-                        .row
+                        .row.instagram-feed__row
                             .col-6
-                                img.img-fluid(src=preFooter.instagramFeed.image0, alt)
+                                a(href='#0')
+                                    img.img-fluid(src=preFooter.instagramFeed.image0, alt)
                             .col-6.vertical-col
-                                img.img-fluid(src=preFooter.instagramFeed.image1, alt)
-                                img.img-fluid(src=preFooter.instagramFeed.image2, alt)
-                        .row.instagram-feed__bottom-row
+                                a(href='#0')
+                                    img.img-fluid(src=preFooter.instagramFeed.image1, alt)
+                                a(href='#0')
+                                    img.img-fluid(src=preFooter.instagramFeed.image2, alt)
+                        .row.instagram-feed__row.instagram-feed__bottom-row
                             .col-4
-                                img.img-fluid(src=preFooter.instagramFeed.image3, alt)
+                                a(href='#0')
+                                    img.img-fluid(src=preFooter.instagramFeed.image3, alt)
                             .col-4
-                                img.img-fluid(src=preFooter.instagramFeed.image4, alt)
+                                a(href='#0')
+                                    img.img-fluid(src=preFooter.instagramFeed.image4, alt)
                             .col-4
-                                img.img-fluid(src=preFooter.instagramFeed.image5, alt)
+                                a(href='#0')
+                                    img.img-fluid(src=preFooter.instagramFeed.image5, alt)
     
     footer.main-footer
+        //- http://html5doctor.com/small-hr-element/
         small.main-footer__copy= footer.copy

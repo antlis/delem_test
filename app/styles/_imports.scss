@@ -2,7 +2,7 @@
 
 @import "bower_components/bootstrap/scss/functions";
 @import "bower_components/bootstrap/scss/variables";
-// @import "custom";
+@import "bootstrap_custom";
 @import "bower_components/bootstrap/scss/mixins";
 @import "bower_components/bootstrap/scss/print";
 @import "bower_components/bootstrap/scss/reboot";
@@ -13,13 +13,13 @@
 // @import "bower_components/bootstrap/scss/tables";
 // @import "bower_components/bootstrap/scss/forms";
 // @import "bower_components/bootstrap/scss/buttons";
-// @import "bower_components/bootstrap/scss/transitions";
+@import "bower_components/bootstrap/scss/transitions";
 // @import "bower_components/bootstrap/scss/dropdown";
 // @import "bower_components/bootstrap/scss/button-group";
 // @import "bower_components/bootstrap/scss/input-group";
 // @import "bower_components/bootstrap/scss/custom-forms";
-// @import "bower_components/bootstrap/scss/nav";
-// @import "bower_components/bootstrap/scss/navbar";
+@import "bower_components/bootstrap/scss/nav";
+@import "bower_components/bootstrap/scss/navbar";
 // @import "bower_components/bootstrap/scss/card";
 // @import "bower_components/bootstrap/scss/breadcrumb";
 // @import "bower_components/bootstrap/scss/pagination";
@@ -30,14 +30,18 @@
 @import "bower_components/bootstrap/scss/media";
 // @import "bower_components/bootstrap/scss/list-group";
 // @import "bower_components/bootstrap/scss/close";
-// @import "bower_components/bootstrap/scss/modal";
+@import "bower_components/bootstrap/scss/modal";
 // @import "bower_components/bootstrap/scss/tooltip";
 // @import "bower_components/bootstrap/scss/popover";
 // @import "bower_components/bootstrap/scss/carousel";
 // @import "bower_components/bootstrap/scss/utilities";
+
+// https://github.com/iconic/open-iconic
 @import "../open-iconic-master/font/css/open-iconic-bootstrap.scss";
 
 
+// https://ianlunn.github.io/Hover/
+@import 'node_modules/hover.css/scss/hover.scss';
 @import 'typography';
 @import 'colors';
 @import 'helpers';

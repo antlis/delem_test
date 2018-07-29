@@ -1,3 +1,11 @@
+// Recipes
+// https://github.com/yeoman/generator-webapp/tree/master/docs/recipes
+// https://github.com/yeoman/generator-webapp/blob/master/docs/recipes/pug.md
+// https://github.com/yeoman/generator-webapp/blob/master/docs/recipes/browserify.md
+// https://github.com/yeoman/generator-webapp/blob/master/docs/recipes/node-heroku.md
+// https://github.com/yeoman/generator-webapp/blob/master/docs/recipes/gh-pages.md
+
+
 // generated on 2018-07-16 using generator-webapp 3.0.1
 const gulp = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
@@ -9,6 +17,7 @@ const browserify = require('browserify');
 const babelify = require('babelify');
 const buffer = require('vinyl-buffer');
 const source = require('vinyl-source-stream');
+const browserifyShim = require('browserify-shim');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;

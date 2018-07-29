@@ -1,9 +1,18 @@
+//- Images Settings
+//- https://cloudinary.com/solutions/image_management
+-
+    var imagesSettings = {
+        qualityCDN: "q_70"
+    }
+
 //- Meta
 -
     var meta = {
         siteName: "Photography",
         description: "Photography is a clean, modern, unique and trendy website template with well-organized layers.",
-        siteNameLogo: "Photography"
+        siteNameLogo: "Photography",
+        logo: "/images/logo_white.png",
+        logoCDN: "https://res.cloudinary.com/dvbyognrh/image/upload/" + imagesSettings.qualityCDN + "/v1532884038/photography_template/logo_white.png"
     }
 
 //- Navigation
@@ -25,7 +34,9 @@
     var about = {
         caption: "About MySelf",
         description: "Hey, thanks for stopping by. My name’s Dakota Jhonson junior and I’m a briliant Art Director and pro Photographer based in the San Francisco where I make cool things for agencies and brands around globe. Mentas is loaded with useful features, each one with its own meaningful purpose. We listen to our users and integrate their feature requests on a regular basis. If you like my work then please do not hesitate to reach out.",
-        button: "View My Flickr Profile"
+        button: "View My Flickr Profile",
+        image: "/images/about_thumbnail.jpg",
+        imageCDN: "https://res.cloudinary.com/dvbyognrh/image/upload/" + imagesSettings.qualityCDN + "/v1532885722/photography_template/about/about_thumbnail.jpg"
     }
     
 //- Service
@@ -33,9 +44,21 @@
     var service = {
         caption: "What I Do?",
         offers: [
-            {title: 'FASHION', image: '/images/service/service_0.jpg'},
-            {title: 'PORTRAITS', image: '/images/service/service_1.jpg'},
-            {title: 'LIFESTYLE', image: '/images/service/service_2.jpg'}
+            {
+                title: "FASHION",
+                image: "/images/service/service_0.jpg",
+                imageCDN: "https://res.cloudinary.com/dvbyognrh/image/upload/" + imagesSettings.qualityCDN + "/v1532886021/photography_template/service/service_0.jpg"
+            },
+            {
+                title: "PORTRAITS",
+                image: "/images/service/service_1.jpg",
+                imageCDN: "https://res.cloudinary.com/dvbyognrh/image/upload/" + imagesSettings.qualityCDN + "/v1532886021/photography_template/service/service_1.jpg"
+            },
+            {
+                title: "LIFESTYLE",
+                image: "/images/service/service_2.jpg",
+                imageCDN: "https://res.cloudinary.com/dvbyognrh/image/upload/" + imagesSettings.qualityCDN + "/v1532886021/photography_template/service/service_2.jpg"
+            }
         ],
         button: 'View My Flickr Profile'
     }
@@ -45,12 +68,36 @@
     var clients = {
         caption: "Happy Clients",
         images: [
-            ['salon centric', '/images/clients/salon_centric.png'],
-            ['luscious', '/images/clients/luscious.png'],
-            ['brillbird', '/images/clients/brillbird.png'],
-            ['loxa beauty', '/images/clients/loxa_beauty.png'],
-            ['minkys', '/images/clients/minkys.png'],
-            ['babaria', '/images/clients/babaria.png']
+            [
+                "salon centric",
+                "/images/clients/salon_centric.png",
+                "https://res.cloudinary.com/dvbyognrh/image/upload/" + imagesSettings.qualityCDN + "/v1532886356/photography_template/clients/salon_centric.png"
+            ],
+            [
+                "luscious",
+                "/images/clients/luscious.png",
+                "https://res.cloudinary.com/dvbyognrh/image/upload/" + imagesSettings.qualityCDN + "/v1532886356/photography_template/clients/luscious.png"
+            ],
+            [
+                "brillbird",
+                "/images/clients/brillbird.png",
+                "https://res.cloudinary.com/dvbyognrh/image/upload/" + imagesSettings.qualityCDN + "/v1532886356/photography_template/clients/brillbird.png"
+            ],
+            [
+                "loxa beauty",
+                "/images/clients/loxa_beauty.png",
+                "https://res.cloudinary.com/dvbyognrh/image/upload/" + imagesSettings.qualityCDN + "/v1532886356/photography_template/clients/loxa_beauty.png"
+            ],
+            [
+                "minkys",
+                "/images/clients/minkys.png",
+                "https://res.cloudinary.com/dvbyognrh/image/upload/" + imagesSettings.qualityCDN + "/v1532886356/photography_template/clients/minkys.png"
+            ],
+            [
+                "babaria",
+                "/images/clients/babaria.png",
+                "https://res.cloudinary.com/dvbyognrh/image/upload/" + imagesSettings.qualityCDN + "/v1532886356/photography_template/clients/babaria.png"
+            ]
         ]
     }
     
@@ -71,6 +118,7 @@
         posts: [
             {
                 image: '/images/blog/blog_0.jpg',
+                imageCDN: '',
                 title: 'Design is the method of putting form and content together.',
                 category: 'Life style',
                 date: 'July 3, 2017',
@@ -79,6 +127,7 @@
             },
             {
                 image: '/images/blog/blog_1.jpg',
+                imageCDN: '',
                 title: 'Design is the method of putting form and content together.',
                 category: 'Life style',
                 date: 'July 3, 2017',
@@ -87,6 +136,7 @@
             },
             {
                 image: '/images/blog/blog_2.jpg',
+                imageCDN: '',
                 title: 'Design is the method of putting form and content together.',
                 category: 'Life style',
                 date: 'July 3, 2017',
@@ -97,12 +147,14 @@
         postsPreview: [
             {
                 image: '/images/blog/blog_thumb_0.jpg',
+                imageCDN: "",
                 content: 'Design is the method of putting form and content together.',
                 category: 'Life style',
                 date: 'July 3, 2017'
             },
             {
                 image: '/images/blog/blog_thumb_1.jpg',
+                imageCDN: "",
                 content: 'Design is the method of putting form and content together.',
                 category: 'Life style',
                 date: 'July 3, 2017'
@@ -114,8 +166,8 @@
 -
     var feedback = {
         caption: "Let's work?",
-        placeholderName: "Your name",
-        placeholderEmail: "Your Email",
+        placeholderName: "* Your name",
+        placeholderEmail: "* Your Email",
         placeholderMessage: "Your Massages",
         button: "Send Massage"
     }

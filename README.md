@@ -13,6 +13,7 @@ npm i & bower install & gulp serve
 ## Preview
 [https://tomatos.neocities.org/portfolio/photography_template/index.html](https://tomatos.neocities.org/portfolio/photography_template/index.html)
 [Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftomatos.neocities.org%2Fportfolio%2Fphotography_template%2Findex.html)
+[GooglePageSpeed](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Ftomatos.neocities.org%2Fportfolio%2Fphotography_template%2Findex.html&tab=mobile)
 
 ## Task
 [Mockup](http://freebies.flatro.ru/photography-website-template)  

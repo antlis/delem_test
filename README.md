@@ -15,7 +15,7 @@ npm i & bower install & gulp serve
 [Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftomatos.neocities.org%2Fportfolio%2Fphotography_template%2Findex.html)
 
 ## Task
-[Mockup](http://freebies.flatro.ru/photography-website-template)
+[Mockup](http://freebies.flatro.ru/photography-website-template)<br>
 [Task description](https://docs.google.com/document/d/1W8Vu_E2zSE6L3Mh2r7DjxnLJ4_fFIMtm4xAGjoFTRW4/edit?usp=sharing)
 
 ## Screenshots

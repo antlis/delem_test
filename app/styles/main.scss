@@ -34,6 +34,18 @@
     }
 }
 
+.modal-body {
+    @extend %muli-semi-bold;
+    font-size: 18px;
+    @extend %text-center;
+}
+
+.modal-header .close {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 .text-right {
     text-align: right;
 }
@@ -426,7 +438,7 @@ body {
 .portfolio__item {
     position: relative;
     vertical-align: middle;
-    display: inline-block;
+    display: flex;
 }
 
 .portfolio__item:hover .portfolio__item-social {
@@ -1535,7 +1547,10 @@ body {
 .portfolio__item {
     position: relative;
     vertical-align: middle;
-    display: inline-block;
+    display: flex;
+    @media screen and (max-width: 1400px) {
+        display: inline-block;
+    }
 }
 
 .portfolio__item:hover .portfolio__item-social {
@@ -2011,6 +2026,14 @@ body {
 }
 
 @media screen and (max-width: #{map-get($grid-breakpoints, lg)}) {
+    .about__title,
+    .about__description {
+        text-align: center;
+    }
+    .about__about-thumb {
+        left: 0;
+        padding-left: 15px;
+    }
     .our-clients__item {
         margin-top: 30px;
     }
@@ -2098,10 +2121,6 @@ body {
     .services__footer {
         text-align: center;
     }
-    .about__title,
-    .about__description {
-        text-align: center;
-    }
     .pre-footer__scroll-to-top {
         height: 40px;
         width: 40px;
@@ -2115,10 +2134,6 @@ body {
     }
     .instagram-feed {
         align-items: center;
-    }
-    .about__about-thumb {
-        left: 0;
-        padding-left: 15px;
     }
     .navbar-collapse {
         justify-content: center;

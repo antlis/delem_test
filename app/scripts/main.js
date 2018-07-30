@@ -1,10 +1,5 @@
 import $ from './../../node_modules/jquery/dist/jquery';
 window.jQuery = window.jquery = window.$ = $;
-
-// import popOver from './../../bower_components/bootstrap/js/dist/popover.js';
-// import modal from './../../bower_components/bootstrap/js/dist/modal.js';
-// import collapse from './../../bower_components/bootstrap/js/dist/collapse.js';
-
 import bootstrap from './../../bower_components/bootstrap/dist/js/bootstrap.bundle.js';
 import FormHandler from './formHandler';
 import FieldValidator from './formValidation';
@@ -82,9 +77,3 @@ var yaShareElements = document.querySelectorAll('.ya-share'),
 yaShareElements.forEach((el, index) => {
     Ya.share2(el, yaShareSettings);
 });
-
-var yaShare = document.querySelector('.ya-share'),
-    yaShareFooter = document.querySelector('.ya-share-footer');
-
-// Ya.share2(yaShare, yaShareSettings);
-// Ya.share2(yaShareFooter, yaShareSettings);

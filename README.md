@@ -7,7 +7,7 @@ npm i & bower install & gulp serve
 1. [Scaffolding](https://github.com/yeoman/generator-webapp)
 2. [Pug - templating](https://github.com/yeoman/generator-webapp/blob/master/docs/recipes/pug.md)
 3. [Browserify - modules](https://github.com/yeoman/generator-webapp/blob/master/docs/recipes/browserify.md)
-4. [Images CDN](https://cloudinary.com)
+4. [Image CDN](https://cloudinary.com)
 5. [Yandex share](https://tech.yandex.ru/share/)
 
 ## Task

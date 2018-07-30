@@ -65,21 +65,21 @@ mixin favicon
 
 mixin social
     meta(name='keywords', content='photography, template')
-    meta(name='image', content='http://res.cloudinary.com/dvbyognrh/image/upload/v1513060997/random/expertcleaning_logo_social.jpg')
-    meta(name='original-source', content='http://expertklining-franch.ru')
-    link(rel='canonical', href='http://expertklining-franch.ru')
-    meta(property='og:locale', content='ru_RU')
+    meta(name='image', content='')
+    meta(name='original-source', content='')
+    link(rel='canonical', href='')
+    meta(property='og:locale', content='en_EN')
     meta(property='og:type', content='website')
     meta(property='og:title', content='Photography Template')
-    meta(property='og:description', content='Получайте по 30 заявок в неделю на клининговые услуги и зарабатывайте от 300 000 руб/мес')
-    meta(property='og:url', content='http://expertklining-franch.ru')
+    meta(property='og:description', content='')
+    meta(property='og:url', content='')
     meta(property='og:site_name', content='Photography Template')
-    meta(property='og:image', content='https://expertcleaning.ru/images/expertcleaning.ru_social.png')
-    meta(property='og:image:secure_url', content='http://res.cloudinary.com/dvbyognrh/image/upload/v1513060997/random/expertcleaning_logo_social.jpg')
+    meta(property='og:image', content='')
+    meta(property='og:image:secure_url', content='')
     meta(name='twitter:title', content='Photography Template')
-    meta(name='twitter:image', content='http://res.cloudinary.com/dvbyognrh/image/upload/v1513060997/random/expertcleaning_logo_social.jpg')
-    meta(name='twitter:description', content='Получайте по 30 заявок в неделю на клининговые услуги и зарабатывайте от 300 000 руб/мес')
-    meta(name='twitter:card', content='http://res.cloudinary.com/dvbyognrh/image/upload/v1513060997/random/expertcleaning_logo_social.jpg')
+    meta(name='twitter:image', content='')
+    meta(name='twitter:description', content='')
+    meta(name='twitter:card', content='')
     meta(name='twitter:site', content='@PhotographyTemplate')
 
 mixin modal
@@ -199,7 +199,10 @@ mixin blogPosts
                                 img.img-fluid(src=post.imageCDN, alt=post.title, draggable="false")
                             .blog-entry__content
                                 h4.blog-entry__title= post.title
-                                div.blog-entry__info= post.category + ' - ' + post.date
+                                div.blog-entry__info
+                                    span.blog-entry__category= post.category
+                                    |  - 
+                                    time.blog-entry__date(datetime="2017-07-03")= post.date
                                 div.blog-entry__text= post.content
                                 div
                                     a.read-more.read-more_fancy(href=post.fullLink) read more
@@ -210,7 +213,10 @@ mixin blogPosts
                             img.img-fluid(src=post.imageCDN, alt=post.title, draggable="false")
                         .blog-entry__content
                             h4.blog-entry__title= post.title
-                            div.blog-entry__info= post.category + ' - ' + post.date
+                            div.blog-entry__info
+                                span.blog-entry__category= post.category
+                                |  - 
+                                time.blog-entry__date(datetime="2017-07-03")= post.date
                             div.blog-entry__text= post.content
                             div
                                 a.read-more.read-more_fancy(href=post.fullLink) read more

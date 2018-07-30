@@ -2,15 +2,14 @@ extends layouts/default
 
 block content
     header.main-header#home
-        .main-header__headline
+        .main-header__headline.navbar.navbar-expand-md
             .main-header__logo
                 +logo
-            .main-header__nav
-                nav.nav.navbar.navbar-expand-md
-                    button.nav__toggle.navbar-toggler(type='button', data-toggle="collapse", data-target="#collapsibleNavbar")
-                        span.oi.oi-collapse-down
-                    .collapse.navbar-collapse
-                        +navList('header')
+            button.nav__toggle.navbar-toggler(type='button', data-toggle="collapse", data-target="#collapsibleNavbar")
+                span.oi.oi-collapse-down
+            .main-header__nav.collapse.navbar-collapse#collapsibleNavbar
+                nav.nav
+                    +navList('header')
                             
         .main-header__hero
             .hero
@@ -35,7 +34,7 @@ block content
                 .container
                     .row
                         .col-md-4.about__about-thumb
-                            img.img-fluid.about__image(src= about.imageCDN alt='about myself')
+                            img.img-fluid.about__image(src= about.imageCDN alt='about myself', draggable="false")
                         .col-md-8
                             .about__textual-content
                                 h3.about__title= about.caption
@@ -43,7 +42,8 @@ block content
                                 aside.services
                                     h4.services__title= service.caption
                                     +service
-                                    a.button.button_dark-blue.button_uppercase.button_semi-bold.hvr-forward(href='https://www.flickr.com/')= service.button
+                                    footer.services__footer
+                                        a.button.button_dark-blue.button_uppercase.button_semi-bold.hvr-forward(href='https://www.flickr.com/')= service.button
         
         section.main-content__our-clients
             .container
@@ -55,51 +55,38 @@ block content
             .container-fluid
                 .portfolio.portfolio_cross-figure#portfolio
                     .row
-                        .col-md-4.portfolio__intro
+                        .col-lg-4.portfolio__intro
                                 h3.portfolio__title= portfolio.caption
                                 p.portfolio__description= portfolio.description
                                 +readMore(portfolio.descriptionLink, 'simple')
-                        .col-md-8.portfolio__gallery
+                        .col-lg-8.portfolio__gallery
                             .row
                                 .col-sm-4.vertical-col
-                                    a.portfolio__item(href='#0')
-                                        img.img-fluid(src='/images/portfolio/portfolio_0.jpg', alt='portfolio 0')
-                                        .portfolio__item-social
-                                    a.portfolio__item(href='#0')
-                                        .portfolio__item-social
-                                        img.img-fluid(src='/images/portfolio/portfolio_1.jpg', alt='portfolio 1')
+                                    +portfolioItem('#0', portfolio.images[0], 'portfolio 0')
+                                    +portfolioItem('#0', portfolio.images[1], 'portfolio 1')
                                 .col-sm-8
                                     .row.horizontal-col
                                         .col-sm-9
-                                            a.portfolio__item(href='#0')
-                                                .portfolio__item-social
-                                                img.img-fluid(src='/images/portfolio/portfolio_2.jpg', alt='portfolio 2')
+                                            +portfolioItem('#0', portfolio.images[2], 'portfolio 2')
                                         .col-sm-3
-                                                .portfolio__item
-                                                    .portfolio__item-social
-                                                    img.img-fluid(src='/images/portfolio/portfolio_3.jpg', alt='portfolio 3')
+                                            +portfolioItem('#0', portfolio.images[3], 'portfolio 3')
                                     .row.horizontal-col
                                         .col-sm-6
-                                            a.portfolio__item(href='#0')
-                                                .portfolio__item-social
-                                                img.img-fluid(src='/images/portfolio/portfolio_4.jpg', alt='portfolio 4')
+                                            +portfolioItem('#0', portfolio.images[4], 'portfolio 4')
                                         .col-sm-6.text-right
-                                            a.portfolio__item(href='#0')
-                                                .portfolio__item-social
-                                                img.img-fluid(src='/images/portfolio/portfolio_5.jpg', alt='portfolio 5')
+                                            +portfolioItem('#0', portfolio.images[5], 'portfolio 5')
                                     .row.horizontal-col
                                         .col-12
-                                            a.portfolio__item(href='#0')
-                                                .portfolio__item-social
-                                                img.img-fluid(src='/images/portfolio/portfolio_6.jpg', alt='portfolio 6')
+                                            +portfolioItem('#0', portfolio.images[6], 'portfolio 6')
                             footer.row.portfolio__footer
                                 .col-12
                                     a.button.button_transparent.button_uppercase.button__wider.hvr-wobble-horizontal(href='#')= portfolio.button
             
         section.main-content__blog
             .blog.blog_cross-figure#blog
-                .container-fluid
-                    +blogPosts
+                .blog_cross-figure-bottom
+                    .container-fluid
+                        +blogPosts
         
         section.main-content__feedback
             .feedback
@@ -121,8 +108,8 @@ block content
         .container
             a.pre-footer__scroll-to-top(href='#home')
                 span.pre-footer__scroll-to-top-icon.oi.oi-chevron-top(aria-hidden='true')
-            .row
-                .col-lg-3
+            .row.bottom-menu
+                .col-lg-3.col-md-6.bottom-menu__item
                     +logo
                     h5.pre-footer__caption.pre-footer__caption_inner= preFooter.contactCaption
                     .contact
@@ -131,36 +118,36 @@ block content
                         div
                             a.contact__email(href='mailto:' + contact.email)=contact.email
                     h5.pre-footer__caption.pre-footer__caption_inner.pre-footer__caption_follow= preFooter.followMeCaption
-                    .ya-share-footer
-                .col-lg-4
+                    .ya-share
+                .col-lg-4.col-md-6.bottom-menu__item
                     h5.pre-footer__caption= preFooter.latestBlogPostsCaption
                     .blog-posts-preview
                         +blogPostsPreview
-                .col-lg-2
+                .col-lg-2.col-md-6.bottom-menu__item
                     h5.pre-footer__caption= preFooter.quickLinkCaption
                     +navList('footer')
-                .col-lg-3
+                .col-lg-3.col-md-6.bottom-menu__item
                     .instagram-feed
                         h5.pre-footer__caption= preFooter.instagramUpdateCaption
                         .row.instagram-feed__row
                             .col-6
-                                a(href='#0')
-                                    img.img-fluid(src=preFooter.instagramFeed.image0, alt)
+                                a(href='#0', draggable="false")
+                                    img.img-fluid(src=preFooter.instagramFeed.image0, alt='instagram feed 0', draggable="false")
                             .col-6.vertical-col
-                                a(href='#0')
-                                    img.img-fluid(src=preFooter.instagramFeed.image1, alt)
-                                a(href='#0')
-                                    img.img-fluid(src=preFooter.instagramFeed.image2, alt)
+                                a(href='#0', draggable="false")
+                                    img.img-fluid(src=preFooter.instagramFeed.image1, alt='instagram feed 1', draggable="false")
+                                a.instagram-feed__bottom-row(href='#0', draggable="false")
+                                    img.img-fluid(src=preFooter.instagramFeed.image2, alt='instagram feed 2', draggable="false")
                         .row.instagram-feed__row.instagram-feed__bottom-row
                             .col-4
-                                a(href='#0')
-                                    img.img-fluid(src=preFooter.instagramFeed.image3, alt)
+                                a(href='#0', draggable="false")
+                                    img.img-fluid(src=preFooter.instagramFeed.image3, alt='instagram feed 3', draggable="false")
                             .col-4
-                                a(href='#0')
-                                    img.img-fluid(src=preFooter.instagramFeed.image4, alt)
+                                a(href='#0', draggable="false")
+                                    img.img-fluid(src=preFooter.instagramFeed.image4, alt='instagram feed 4', draggable="false")
                             .col-4
-                                a(href='#0')
-                                    img.img-fluid(src=preFooter.instagramFeed.image5, alt)
+                                a(href='#0', draggable="false")
+                                    img.img-fluid(src=preFooter.instagramFeed.image5, alt='instagram feed 5', draggable="false")
     
     footer.main-footer
         //- http://html5doctor.com/small-hr-element/

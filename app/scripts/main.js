@@ -56,22 +56,17 @@ form.addEventListener('submit', (event) => {
 });
 // Form validation
 
-// Page scroll, form handler
-// var form = new FormHandler( $('.feedback__ajax-submit') ),
-//     pageScroll = new Scroller();
+// Page scroll
+var pageScroll = new Scroller();
+pageScroll.initScrolling($);
+// Page scroll
 
-// form.initSubmitHandler();
-// pageScroll.initScrolling($);
-// Page scroll, form handler
-
-
-var yaShare = document.querySelector('.ya-share'),
-    yaShareFooter = document.querySelector('.ya-share-footer'),
+var yaShareElements = document.querySelectorAll('.ya-share'),
     yaShareSettings = {
         content: {
-            url: 'https://yandex.com',
-            title: 'Yandex',
-            description: 'something',
+            url: 'http://digital-elem-xzarxzes.c9users.io/',
+            title: 'Photography Template',
+            description: 'Photography is a clean, modern, unique and trendy website template with well-organized layers.',
             image: 'https://yastatic.net/morda-logo/i/logo.svg'   
         },
         theme: {
@@ -83,6 +78,13 @@ var yaShare = document.querySelector('.ya-share'),
             bare: false
         }
     };
+    
+yaShareElements.forEach((el, index) => {
+    Ya.share2(el, yaShareSettings);
+});
 
-Ya.share2(yaShare, yaShareSettings);
-Ya.share2(yaShareFooter, yaShareSettings);
+var yaShare = document.querySelector('.ya-share'),
+    yaShareFooter = document.querySelector('.ya-share-footer');
+
+// Ya.share2(yaShare, yaShareSettings);
+// Ya.share2(yaShareFooter, yaShareSettings);

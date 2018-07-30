@@ -23,4 +23,3 @@ npm i & bower install & gulp serve
 
 ### Mobile
 ![Mobile](https://res.cloudinary.com/dvbyognrh/image/upload/v1532930014/photography_template/screencapture-digital-elem-xzarxzes-c9users-io-8080-2018-07-30-10_53_06.png)
-!

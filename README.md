@@ -9,6 +9,7 @@ npm i & bower install & gulp serve
 3. [Browserify - modules](https://github.com/yeoman/generator-webapp/blob/master/docs/recipes/browserify.md)
 4. [Image CDN](https://cloudinary.com)
 5. [Yandex share](https://tech.yandex.ru/share/)
+6. [SVG icons](https://useiconic.com/open#icons)
 
 ## Preview
 [https://tomatos.neocities.org/portfolio/photography_template/index.html](https://tomatos.neocities.org/portfolio/photography_template/index.html)  
